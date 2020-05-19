@@ -2,13 +2,26 @@
 #include <cstdlib>
 #include <string.h>
 
+#include "../header/code.hpp"
+#include "../header/decode.hpp"
+
 int main(int argc, char* argv[]){
     if(argc > 1){
         if(strcmp(argv[1], "code") == 0){
-            std::cout << "oi\n";
+            std::string signature, name, language;
+            char compiled;
+            std::cout << "Your signature: ";
+            std::cin >> signature;
+            std::cout << "Code name: ";
+            std::cin >> name;
+            std::cout << "Programming language: ";
+            std::cin >> language;
+            std::cout << "It's compiled[y/n]: ";
+            std::cin >> compiled;
+            code(signature, name, language, compiled);
         }
         else if(strcmp(argv[1], "decode") == 0){
-            std::cout << "ola\n";
+            decode();
         }
         else{
             std::cout << "ERROR: 404\n";

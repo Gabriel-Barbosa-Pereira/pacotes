@@ -1,6 +1,8 @@
 #ifndef _CODE_HPP_
 #define _CODE_HPP_
 
-void code();
+#include <string>
+
+void code(std::string signature, std::string name, std::string language, char compiled);
 
 #endif
