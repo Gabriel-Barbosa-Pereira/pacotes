@@ -4,6 +4,7 @@ def main():
     x = system("C:\\MinGW\\bin\\g++ main.cpp code.cpp decode.cpp -o main.exe")
     if(x == 0):
         print("Compilation was a success")
+        system("move main.exe C:\\Users\\celin\\Desktop\\pacotes\\release")
     else:
         print("Compilaiton wasn't a success")
 

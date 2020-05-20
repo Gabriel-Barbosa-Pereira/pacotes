@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <string.h>
+#include <cstring>
 
 #include "../header/code.hpp"
 #include "../header/decode.hpp"
@@ -8,17 +8,16 @@
 int main(int argc, char* argv[]){
     if(argc > 1){
         if(strcmp(argv[1], "code") == 0){
-            std::string signature, name, language;
-            char compiled;
+            std::string signature, title, language, path;
             std::cout << "Your signature: ";
             std::cin >> signature;
-            std::cout << "Code name: ";
-            std::cin >> name;
-            std::cout << "Programming language: ";
+            std::cout << "Title: ";
+            std::cin >> title;
+            std::cout << "Language: ";
             std::cin >> language;
-            std::cout << "It's compiled[y/n]: ";
-            std::cin >> compiled;
-            code(signature, name, language, compiled);
+            std::cout << "Full path: ";
+            std::cin >> path;
+            code(signature, title, language, path);
         }
         else if(strcmp(argv[1], "decode") == 0){
             decode();

@@ -1,3 +1,3 @@
 #include "../header/code.hpp"
 
-void code(std::string signature, std::string name, std::string language, char compiled){}
+void code(std::string signature, std::string title, std::string language, std::string path){}
