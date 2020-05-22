@@ -1,9 +1,19 @@
 #include "../header/code.hpp"
 
-void code(std::string signature, std::string title, std::string language, std::string path){
-    signature = invert(signature);
-    title = invert(title);
-    language = invert(language);
+int code(std::string signature, std::string title, std::string language, std::string path){
+    std::ifstream file;
+    file.open(path); // Verificar
+    if(file.is_open()){
+        signature = invert(signature);
+        title = invert(title);
+        language = invert(language);
+        file.close();
+        return 0;
+    }
+    else{
+        file.close();
+        return 1;
+    }
 }
 
 std::string invert(std::string text){

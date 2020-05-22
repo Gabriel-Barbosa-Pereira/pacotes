@@ -17,7 +17,12 @@ int main(int argc, char* argv[]){
             std::cin >> language;
             std::cout << "Full path: ";
             std::cin >> path;
-            code(signature, title, language, path);
+            if(code(signature, title, language, path) == 0){
+                std::cout << "Coding was a success\n";
+            }
+            else{
+                std::cout << "Coding wasn't a success\n";
+            }
         }
         else if(strcmp(argv[1], "decode") == 0){
             decode();
