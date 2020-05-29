@@ -43,4 +43,9 @@ void convert(std::string text){
     con["M"] = "12"; con["N"] = "13"; con["O"] = "14"; con["P"] = "15"; con["Q"] = "16"; con["R"] = "17";
     con["S"] = "18"; con["T"] = "19"; con["U"] = "20"; con["V"] = "21"; con["W"] = "22"; con["X"] = "23";
     con["Y"] = "24"; con["Z"] = "25";
+    con["a"] = "26"; con["b"] = "27"; con["c"] = "28"; con["d"] = "29"; con["e"] = "30"; con["f"] = "31";
+    con["g"] = "32"; con["h"] = "33"; con["i"] = "34"; con["j"] = "35"; con["k"] = "36"; con["l"] = "37";
+    con["m"] = "38"; con["n"] = "39"; con["o"] = "40"; con["p"] = "41"; con["q"] = "42"; con["r"] = "43";
+    con["s"] = "44"; con["t"] = "45"; con["u"] = "46"; con["v"] = "47"; con["w"] = "48"; con["x"] = "49";
+    con["y"] = "50"; con["z"] = "51";
 }
