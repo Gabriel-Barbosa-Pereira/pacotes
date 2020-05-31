@@ -36,7 +36,7 @@ std::string invert(std::string text){
     return reverse;
 }
 
-void convert(std::string text){
+std::string convert(std::string text){
     std::map<char, std::string> con;
     std::string coded;
     size_t t{text.size() - 1};
@@ -55,11 +55,33 @@ void convert(std::string text){
     con['6'] = "58"; con['7'] = "59"; con['8'] = "60"; con['9'] = "61"; con[' '] = ";";
     while(true){
         if(con.find(text[i]) != con.end() && con.find(text[i]) != con.find(' ') && i != t){
-            coded += con.find(text[i])->second+".";
+            if(text[i + 1] == ' '){
+                coded += con.find(text[i])->second;
+            }
+            else{
+                coded += con.find(text[i])->second+".";
+            }
         }
         else if(con.find(text[i]) == con.find(' ')){
             coded += con[' '];
         }
+        else if(con.find(text[i]) != con.end() && con.find(text[i]) != con.find(' ') && i == t){
+            coded += con.find(text[i])->second;
+            break;
+        }
+        else if(con.find(text[i]) == con.end() && i != t){
+            if(text[i + 1] == ' '){
+                coded += "@";
+            }
+            else{
+                coded += "@.";
+            }
+        }
+        else if(con.find(text[i]) == con.end() && i == t){
+            coded += "@";
+            break;
+        }
         i++;
     }
+    return coded;
 }
