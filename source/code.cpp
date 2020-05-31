@@ -4,15 +4,31 @@ int code(std::string signature, std::string title, std::string language, std::st
     std::ifstream file;
     file.open(path);
     if(file.is_open()){
-        signature = invert(signature);
-        title = invert(title);
-        language = invert(language);
-        std::string line;
-        while(getline(file, line)){
-           line = invert(line);
+        std::ofstream out;
+        out.open(title+".csal");
+        if(out.is_open()){
+            signature = invert(signature);
+            signature = convert(signature);
+            title = invert(title);
+            title = convert(title);
+            language = invert(language);
+            language = convert(language);
+            out << signature << "\n";
+            out << title << "\n";
+            out << language << "\n";
+            std::string line;
+            while(getline(file, line)){
+                line = invert(line);
+                line = convert(line);
+                out << line << "\n";
+            }
+            file.close();
+            out.close();
+            return 0;
         }
-        file.close();
-        return 0;
+        else{
+            return 1;
+        }
     }
     else{
         file.close();
