@@ -24,7 +24,15 @@ int main(int argc, char* argv[]){
             }
         }
         else if(strcmp(argv[1], "decode") == 0){
-            decode();
+            std::string path;
+            std::cout << "Full path: ";
+            std::cin >> path;
+            if(decode(path) == 0){
+                std::cout << "Decoding was a success\n";
+            }
+            else{
+                std::cout << "Decoding wasn't a success\n";
+            }
         }
         else{
             std::cout << "ERROR: 404\n";

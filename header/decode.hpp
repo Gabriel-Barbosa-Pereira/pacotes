@@ -1,6 +1,9 @@
 #ifndef _DECODE_HPP_
 #define _DECODE_HPP_
 
-void decode();
+#include <string>
+#include <fstream>
+
+int decode(std::string path);
 
 #endif
