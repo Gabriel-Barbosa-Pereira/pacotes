@@ -27,6 +27,8 @@ int code(std::string signature, std::string title, std::string language, std::st
             return 0;
         }
         else{
+            file.close();
+            out.close();
             return 1;
         }
     }
