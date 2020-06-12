@@ -10,12 +10,24 @@ int decode(std::string path){
         getline(file, signature);
         getline(file, title);
         getline(file, language);
+        signature = convert_decode(signature);
+        title = convert_decode(title);
+        language = convert_decode(language);
+        signature = invert(signature);
+        title = invert(title);
+        language = invert(language);
         std::ofstream out;
         out.open("converted_"+title+".txt");
         if(out.is_open()){
-            out << signature << "\n";
-            out << title << "\n";
-            out << language << "\n";
+            out << "Signature: " << signature << "\n";
+            out << "Title: " << title << "\n";
+            out << "Language:" << language << "\n";
+            std::string line;
+            while(getline(file, line)){
+                line = convert_decode(line);
+                line = invert(line);
+                out << line << "\n";
+            }
             file.close();
             out.close();
             return 0;
