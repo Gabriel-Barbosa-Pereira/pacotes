@@ -8,18 +8,18 @@ int code(std::string signature, std::string title, std::string language, std::st
         out.open(title+".csal");
         if(out.is_open()){
             signature = invert(signature);
-            signature = convert(signature);
+            signature = convert_code(signature);
             title = invert(title);
-            title = convert(title);
+            title = convert_code(title);
             language = invert(language);
-            language = convert(language);
+            language = convert_code(language);
             out << signature << "\n";
             out << title << "\n";
             out << language << "\n";
             std::string line;
             while(getline(file, line)){
                 line = invert(line);
-                line = convert(line);
+                line = convert_code(line);
                 out << line << "\n";
             }
             file.close();
@@ -38,7 +38,7 @@ int code(std::string signature, std::string title, std::string language, std::st
     }
 }
 
-std::string convert(std::string text){
+std::string convert_code(std::string text){
     std::map<char, std::string> con;
     std::string coded;
     size_t t{text.size() - 1};

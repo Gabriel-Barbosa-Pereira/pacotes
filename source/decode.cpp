@@ -31,3 +31,40 @@ int decode(std::string path){
         return 1;
     }
 }
+
+std::string convert_decode(std::string txt){
+    int t{0};
+    std::string ret;
+    std::map<std::string, std::string> dec;
+    dec[0] = "A"; dec["1"] = "B"; dec["2"] = "C"; dec["3"] = "D"; dec["4"] = "E"; dec["5"] = "F"; 
+    dec["6"] = "G"; dec["7"] = "H"; dec["8"] = "I"; dec["9"] = "J"; dec["10"] = "K"; dec["11"] = "L";
+    dec["12"] = "M"; dec["13"] = "N"; dec["14"] = "O"; dec["15"] = "P"; dec["16"] = "Q"; dec["17"] = "R";
+    dec["18"] = "S"; dec["19"] = "T"; dec["20"] = "U"; dec["21"] = "V"; dec["22"] = "W"; dec["23"] = "X";
+    dec["24"] = "Y"; dec["25"] = "Z";
+    dec["26"] = "a"; dec["27"] = "b"; dec["28"] = "c"; dec["29"] = "d"; dec["30"] = "e"; dec["31"] = "f";
+    dec["32"] = "g"; dec["33"] = "h"; dec["34"] = "i"; dec["35"] = "j"; dec["36"] = "k"; dec["37"] = "l";
+    dec["38"] = "m"; dec["39"] = "n"; dec["40"] = "o"; dec["41"] = "p"; dec["42"] = "q"; dec["43"] = "r";
+    dec["44"] = "s"; dec["45"] = "t"; dec["46"] = "u"; dec["47"] = "v"; dec["48"] = "w"; dec["49"] = "x";
+    dec["50"] = "y"; dec["51"] = "z";
+    dec["52"] = "0"; dec["53"] = "1"; dec["54"] = "2"; dec["55"] = "3"; dec["56"] = "4"; dec["57"] = "5";
+    dec["58"] = "6"; dec["59"] = "7"; dec["60"] = "8"; dec["61"] = "9"; dec[";"] = " ";
+    while(true){
+        if(txt[t] != '.'){
+            if(dec.find(std::string(txt[t])) == dec.find(";")){
+                ret += dec.find(std::string(txt[t]))->second;
+            }
+            else if(txt[t + 1] != '.'){
+                ret += dec.find(std::string(txt[t]))->second+dec.find(std::string(txt[t + 1]))->second;
+                t++;
+            }
+            else if(txt[t + 1] == '.'){
+                ret += dec.find(std::string(txt[t]))->second;
+            }
+        }
+        if(t == txt.size() - 1){
+            break;
+        }
+        t++;
+    }
+    return ret;
+}

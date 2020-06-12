@@ -29,6 +29,8 @@ int main(int argc, char* argv[]){
             std::cin >> path;
             if(decode(path) == 0){
                 std::cout << "Decoding was a success\n";
+                std::string teste{convert_decode("37.30.34.43.27.26.6")};
+                std::cout << teste << "\n";
             }
             else{
                 std::cout << "Decoding wasn't a success\n";

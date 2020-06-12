@@ -5,4 +5,6 @@
 
 int decode(std::string path);
 
+std::string convert_decode(std::string txt);
+
 #endif

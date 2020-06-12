@@ -5,6 +5,6 @@
 
 int code(std::string signature, std::string title, std::string language, std::string path);
 
-std::string convert(std::string text); // Then go back to std::string
+std::string convert_code(std::string text); // Then go back to std::string
 
 #endif
