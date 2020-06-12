@@ -22,6 +22,7 @@ int decode(std::string path){
             out << "Signature: " << signature << "\n";
             out << "Title: " << title << "\n";
             out << "Language:" << language << "\n";
+            out << "\n";
             std::string line;
             while(getline(file, line)){
                 line = convert_decode(line);
